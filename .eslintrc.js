@@ -26,6 +26,8 @@ module.exports = {
     'no-trailing-spaces': [2],
     'jsx-quotes': ['error', 'prefer-single'],
     'react/jsx-boolean-value': [0],
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'prettier/prettier': 2,
     'space-before-function-paren': 0,

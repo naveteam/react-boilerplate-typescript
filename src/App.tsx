@@ -1,4 +1,3 @@
-import React from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { BrowserRouter as Router, Switch } from 'react-router-dom'
 
