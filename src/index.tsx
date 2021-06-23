@@ -1,14 +1,14 @@
-import React from 'react'
+import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
 import AppProviders from 'context'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <AppProviders>
       <App />
     </AppProviders>
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root')
 )

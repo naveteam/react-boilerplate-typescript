@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { Column, Input, Button } from 'components'
@@ -10,7 +10,7 @@ interface LoginValues {
   password: string
 }
 
-const Login: React.FC = () => {
+const Login: FC = () => {
   const { register, handleSubmit, errors, formState } = useForm<LoginValues>({ validationSchema: loginSchema })
   const { login } = useUser()
 

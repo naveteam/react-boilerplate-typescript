@@ -13,12 +13,7 @@ module.exports = {
     }
   },
   plugins: ['react-hooks'],
-  extends: [
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended'
-  ],
+  extends: ['plugin:react/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   rules: {
     quotes: [2, 'single'],
     semi: [2, 'never'],
@@ -26,6 +21,8 @@ module.exports = {
     'no-trailing-spaces': [2],
     'jsx-quotes': ['error', 'prefer-single'],
     'react/jsx-boolean-value': [0],
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'prettier/prettier': 2,
     'space-before-function-paren': 0,

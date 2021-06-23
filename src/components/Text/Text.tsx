@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import styled from 'styled-components'
 import {
   space,
@@ -25,7 +26,7 @@ interface TextProps extends SpaceProps, LayoutProps, TypographyProps, ColorProps
   variant: keyof TextVariants
 }
 
-const TextComponent: React.FC<TextProps> = styled.p(
+const TextComponent: FC<TextProps> = styled.p(
   variant({
     variants: {
       big: {
