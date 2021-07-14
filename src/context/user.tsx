@@ -22,27 +22,23 @@ const UserProvider: React.FC = props => {
   const [isFetchingUser, setIsFetchingUser] = useState(true)
   const [user, setUser] = useState<UserData | null>(null)
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const token = await getToken()
-      try {
-        if (token) {
-          const userResponse = await getMe()
-          return setUser(userResponse)
-        }
-        if (['/login'].includes(window.location.pathname)) {
-          return
-        }
-        window.location.href = '/login'
-      } catch (error) {
-        console.log('error', error)
-      } finally {
-        setIsFetchingUser(false)
+  const fetchUser = async () => {
+    const token = await getToken()
+    try {
+      if (token) {
+        const userResponse = await getMe()
+        return setUser(userResponse)
       }
+      if (['/login'].includes(window.location.pathname)) {
+        return
+      }
+      window.location.href = '/login'
+    } catch (error) {
+      console.log('error', error)
+    } finally {
+      setIsFetchingUser(false)
     }
-
-    fetchUser()
-  }, [])
+  }
 
   const login = async (credentials: Credentials) => {
     try {
@@ -58,6 +54,10 @@ const UserProvider: React.FC = props => {
     clearToken()
     setUser(null)
   }
+
+  useEffect(() => {
+    fetchUser()
+  }, [])
 
   return <UserContext.Provider value={{ user, isFetchingUser, login, logout }} {...props} />
 }
