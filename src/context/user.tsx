@@ -16,6 +16,8 @@ interface UserContextData {
 
 const UserContext = createContext<UserContextData>({} as UserContextData)
 
+const useUser: () => UserContextData = () => useContext(UserContext)
+
 const UserProvider: React.FC = props => {
   const [isFetchingUser, setIsFetchingUser] = useState(true)
   const [user, setUser] = useState<UserData | null>(null)
@@ -59,7 +61,5 @@ const UserProvider: React.FC = props => {
 
   return <UserContext.Provider value={{ user, isFetchingUser, login, logout }} {...props} />
 }
-
-const useUser = () => useContext(UserContext)
 
 export { UserProvider, useUser }
