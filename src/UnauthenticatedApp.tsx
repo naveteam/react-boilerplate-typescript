@@ -1,8 +1,9 @@
+import React from 'react'
 import { Route } from 'react-router-dom'
 
 import { Login } from 'screens'
 
-const UnauthenticatedApp = () => {
+const UnauthenticatedApp: React.FC = () => {
   return (
     <Route path='/login'>
       <Login />
