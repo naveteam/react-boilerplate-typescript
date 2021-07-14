@@ -5,13 +5,8 @@ import { Column, Input, Button } from 'components'
 import { loginSchema } from 'utils/yup-schemas'
 import { useUser } from 'context/user'
 
-interface LoginValues {
-  email: string
-  password: string
-}
-
 const Login: FC = () => {
-  const { register, handleSubmit, errors, formState } = useForm<LoginValues>({ validationSchema: loginSchema })
+  const { register, handleSubmit, errors, formState } = useForm<Credentials>({ validationSchema: loginSchema })
   const { login } = useUser()
 
   const onSubmit = handleSubmit(login)
