@@ -1,8 +1,8 @@
 import { FieldError } from 'react-hook-form'
 import styled, { css } from 'styled-components'
 
-import { Column, Text } from 'components'
-import { ColumnProps } from 'components/Column'
+import { Text } from '../Text'
+import { Column, ColumnProps } from '../Column'
 
 interface InputProps {
   name: string

@@ -1,6 +1,5 @@
 import { FC } from 'react'
-import { Row } from 'components'
-import { RowProps } from 'components/Row'
+import { Row, RowProps } from '../Row'
 
 export type ColumnProps = RowProps
 
