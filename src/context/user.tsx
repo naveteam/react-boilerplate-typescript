@@ -2,12 +2,6 @@ import { createContext, useContext, useState, useEffect } from 'react'
 
 import { getMe, loginUser } from 'services/auth'
 import { getToken, setToken, clearToken } from 'utils/auth'
-
-interface Credentials {
-  email: string
-  password: string
-}
-
 interface UserData {
   name: string
   email: string
